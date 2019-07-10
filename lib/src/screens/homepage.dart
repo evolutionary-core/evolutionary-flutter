@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
-
-final List<String> animals = ['fish', 'reptiles', 'mammals', 'birds', 'insets', 'humans'];
-final String title = "Evolutionary";
-final ThemeData theme = ThemeData(
-  primaryColor: Color(0xFF118855),
-  accentColor: Colors.yellow,
-);
+import '../state.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
       Container(
-        color: theme.primaryColor,
+        color: Evo.theme.primaryColor,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
@@ -28,7 +22,7 @@ class HomePage extends StatelessWidget {
                 fontWeight: FontWeight.w900,
               )),
               Container(
-                color: theme.accentColor,
+                color: Evo.theme.accentColor,
                 transform: Matrix4.translationValues(0, -30, 0),
                 width: MediaQuery.of(context).size.width * 0.3,
                 height: 5
