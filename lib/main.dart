@@ -10,11 +10,12 @@ class Evolutionary extends StatelessWidget {
     return MaterialApp(title: Evo.title, theme: Evo.theme,
     initialRoute: '/',
     routes: {
-      '/': (context) => Scaffold(
-        appBar: AppBar(title: Text(Evo.title), elevation: 0,),
-        body: HomePage(),
-      )
+      '/': (context) => base(HomePage())
     }
     );
   }
 }
+
+Widget base(Widget screen) => Scaffold(
+      body: screen,
+);
