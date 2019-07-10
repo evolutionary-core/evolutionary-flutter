@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
 import 'src/screens/homepage.dart';
-import 'dart:convert';
 import 'src/state.dart';
 
 void main() => runApp(Evolutionary());
-
-Future getSpecieData(String name, BuildContext context) async {
-  String data = await DefaultAssetBundle.of(context).loadString("data/"+name+".json");
-  return json.decode(data);
-}
 
 class Evolutionary extends StatelessWidget {
   @override
