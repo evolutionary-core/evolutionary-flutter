@@ -14,19 +14,6 @@ class HomePage extends StatelessWidget {
                 "lib/assets/logo.png",
                 width: 100,
               ),
-              Text("Evolution's dictionary",
-                style: TextStyle(
-                fontSize: 20,
-                color: Colors.white,
-                fontFamily: "monospace",
-                fontWeight: FontWeight.w900,
-              )),
-              Container(
-                color: Evo.theme.accentColor,
-                transform: Matrix4.translationValues(0, -30, 0),
-                width: MediaQuery.of(context).size.width * 0.3,
-                height: 5
-              )
             ],
         ),
         constraints: BoxConstraints.expand(
