@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 class Evo {
   // App globals
-  static List<String> animals = ['fish', 'reptiles', 'mammals', 'birds', 'insets', 'humans'];
+  static List<String> animals = ['fish', 'reptiles', 'mammals', 'birds', 'insects', 'humans'];
+  static List<String> animalImages = ['lib/assets/fish.jpg', 'lib/assets/reptiles.jpg', 'lib/assets/mammals.jpg', 'lib/assets/birds.jpg', 'lib/assets/insects.jpg', 'lib/assets/humans.jpg'];
   static String title = "Evolutionary";
   static ThemeData theme = ThemeData(
     primaryColor: Color(0xFF118855),
