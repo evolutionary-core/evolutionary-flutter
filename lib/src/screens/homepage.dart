@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 import '../state.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  var _categories = ['fish', 'insect', 'mammal', 'bird','human'];
+
+	var _currentItemSelected = 'fish';
+
   @override
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
@@ -27,9 +36,29 @@ class HomePage extends StatelessWidget {
         ),
         child: Card(elevation: 5,
           child: Padding(padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
-            child:  TextField(
-              decoration: InputDecoration(
-                labelText: "Search Species"
+            child:  Container(
+              width: 300.0,
+              child: ButtonTheme(
+              
+              child: DropdownButton<String>(
+                isExpanded: true,
+
+					    items: _categories.map((String dropDownStringItem) {
+					    	return DropdownMenuItem<String>(
+							    value: dropDownStringItem,
+							    child: Text(dropDownStringItem),
+						    );
+					    }).toList(),
+                  hint: Text("Search Species"),
+
+					    onChanged: (String newValueSelected) {
+					    	// Your code to execute, when a menu item is selected from drop down
+						    _onDropDownItemSelected(newValueSelected);
+					    },
+
+					    value: _currentItemSelected,
+
+				    ),
               ),
             ),
           )
@@ -52,7 +81,14 @@ class HomePage extends StatelessWidget {
 
     ],);
   }
+  void _onDropDownItemSelected(String newValueSelected) {
+	  setState(() {
+		  this._currentItemSelected = newValueSelected;
+	  });
+  }
 }
+
+
 
 ListView categoriesBuilder(context) {
   return ListView.builder(
